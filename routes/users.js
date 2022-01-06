@@ -4,7 +4,7 @@ const passport = require('passport');
 
 const Recaptcha = require('express-recaptcha').RecaptchaV2;
 
-const recaptcha = new Recaptcha('6Lc_j-UcAAAAAA_RytaRmYo9BTZddhZYOdZX7_6C', '6Lc_j-UcAAAAAIhL8pJ6w-YqEgzMvL0yO5bFUbL9');
+const recaptcha = new Recaptcha('6Lcbf_QdAAAAAO00dSehhuWntDNceq3ARgJOas8c', '6Lcbf_QdAAAAANmyJDfd37AUYQJlLE14A1Yl8d9x');
 
 const { getHashedPassword, randomText } = require('../lib/function');
 const { checkUsername, addUser } = require('../database/db');
