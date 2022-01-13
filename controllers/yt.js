@@ -21,7 +21,6 @@ async function youtubePlay(req, res) {
         var result = data;
              res.json({
              	limitAdd(apikey)
-             	author: 'Wanz-Botz',
                  result
     }).catch(error => {
         console.log(error);
@@ -52,7 +51,6 @@ async function youtubeMp3(req, res) {
         var result = data;
              res.json({
              	limitAdd(apikey)
-             	author: 'Wanz-Botz',
                  result
     }).catch(error => {
         console.log(error);
@@ -83,7 +81,6 @@ async function youtubeMp4(req, res) {
         var result = data;
              res.json({
              	limitAdd(apikey)
-             	author: 'Wanz-Botz',
                  result
         });
     }).catch(error => {
