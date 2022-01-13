@@ -20,7 +20,7 @@ async function youtubePlay(req, res) {
         .then(data => {
         var result = data;
              res.json({
-             	limitAdd(apikey);
+             	limitAdd(apikey)
              	author: 'Wanz-Botz',
                  result
     }).catch(error => {
@@ -51,7 +51,7 @@ async function youtubeMp3(req, res) {
         .then(data => {
         var result = data;
              res.json({
-             	limitAdd(apikey);
+             	limitAdd(apikey)
              	author: 'Wanz-Botz',
                  result
     }).catch(error => {
@@ -82,7 +82,7 @@ async function youtubeMp4(req, res) {
         .then(data => {
         var result = data;
              res.json({
-             	limitAdd(apikey);
+             	limitAdd(apikey)
              	author: 'Wanz-Botz',
                  result
         });
