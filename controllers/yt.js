@@ -1,5 +1,5 @@
-const { ytPlay, ytMp3, ytMp4 } = require("../lib/youtube");
 const { cekKey, limitAdd, isLimit } = require('../database/db');
+const fetch = require('node-fetch')
 
 async function youtubePlay(req, res) {
     const query = req.query.query;
@@ -15,9 +15,14 @@ async function youtubePlay(req, res) {
     });
     let limit = await isLimit(apikey);
     if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
-    ytPlay(query).then(result => {
-        limitAdd(apikey);
-        res.status(200).send({status: 200, result: result});
+    fetch(encodeURI(`https://api.zeks.me/api/ytplaymp3?apikey=apivinz&q=${query}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	limitAdd(apikey);
+             	author: 'Wanz-Botz',
+                 result
     }).catch(error => {
         console.log(error);
         res.status(500).send({
@@ -41,9 +46,14 @@ async function youtubeMp3(req, res) {
     });
     let limit = await isLimit(apikey);
     if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
-    ytMp3(url).then(result => {
-        limitAdd(apikey);
-        res.status(200).send({status: 200, result: result});
+    fetch(encodeURI(`https://api.zeks.me/api/ytmp3/2?apikey=apivinz&url=${url}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	limitAdd(apikey);
+             	author: 'Wanz-Botz',
+                 result
     }).catch(error => {
         console.log(error);
         res.status(500).send({
@@ -67,11 +77,14 @@ async function youtubeMp4(req, res) {
     });
     let limit = await isLimit(apikey);
     if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
-    ytMp4(url).then(result => {
-        limitAdd(apikey);
-        res.status(200).send({
-            status: 200, 
-            result: result
+    fetch(encodeURI(`https://api.zeks.me/api/ytmp4/2?apikey=apivinz&url=${url}`))
+        .then(response => response.json())
+        .then(data => {
+        var result = data;
+             res.json({
+             	limitAdd(apikey);
+             	author: 'Wanz-Botz',
+                 result
         });
     }).catch(error => {
         console.log(error);
