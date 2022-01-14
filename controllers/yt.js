@@ -20,8 +20,8 @@ async function youtubePlay(req, res) {
         .then(data => {
         var result = data;
              res.json({
-             	limitAdd(apikey)
-                 res.status(200).send(result);
+            limitAdd(apikey)
+           .send(result)
     }).catch(error => {
         console.log(error);
         res.status(500).send({
@@ -51,7 +51,7 @@ async function youtubeMp3(req, res) {
         var result = data;
              res.json({
              	limitAdd(apikey)
-                 res.status(200).send(result);
+                .send(result)
     }).catch(error => {
         console.log(error);
         res.status(500).send({
@@ -81,7 +81,7 @@ async function youtubeMp4(req, res) {
         var result = data;
              res.json({
              	limitAdd(apikey)
-                 res.status(200).send(result);
+               .send(result);
         });
     }).catch(error => {
         console.log(error);
