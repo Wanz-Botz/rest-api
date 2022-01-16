@@ -1,5 +1,5 @@
 const { ytPlay, ytMp3, ytMp4 } = require("../lib/youtube");
-const { cekKey, limitAdd, isLimit } = require('../database/db');
+const { cekKey } = require('../database/db');
 
 async function youtubePlay(req, res) {
     const query = req.query.query;
@@ -13,10 +13,7 @@ async function youtubePlay(req, res) {
         status: 403,
         message: `apikey ${apikey} not found, please register first!`
     });
-    let limit = await isLimit(apikey);
-    if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
     ytPlay(query).then(result => {
-        limitAdd(apikey);
         res.status(200).send({status: 200, result: result});
     }).catch(error => {
         console.log(error);
@@ -39,10 +36,7 @@ async function youtubeMp3(req, res) {
         status: 403,
         message: `apikey ${apikey} not found, please register first!`
     });
-    let limit = await isLimit(apikey);
-    if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
     ytMp3(url).then(result => {
-        limitAdd(apikey);
         res.status(200).send({status: 200, result: result});
     }).catch(error => {
         console.log(error);
@@ -65,10 +59,7 @@ async function youtubeMp4(req, res) {
         status: 403,
         message: `apikey ${apikey} not found, please register first!`
     });
-    let limit = await isLimit(apikey);
-    if (limit) return res.status(403).send({status: 403, message: 'your limit is 0, reset every morning'});
     ytMp4(url).then(result => {
-        limitAdd(apikey);
         res.status(200).send({
             status: 200, 
             result: result
