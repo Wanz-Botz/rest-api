@@ -8,7 +8,7 @@ const { cakLontong, bijak, quotes, fakta, ptl, motivasi } = require('../controll
 const { photoOxy } = require('./oxy');
 const { tgContr } = require('../controllers/tebakgambar');
 const { ttp } = require('../controllers/ttp');
-const { attp } = require('../controllers/ttp');
+const { attp } = require('../controllers/attp');
 const { mDo } = require('../controllers/media');
 const { tIk } = require('../controllers/tik');
 
