@@ -16,7 +16,7 @@ async function ttp(req, res) {
     try {
         limitAdd(apikey)
         buffer = await fetch(`https://hardianto.xyz/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=hardianto`).then(v => v.buffer())
-        res.type('webp')
+        res.type('image')
         res.send(buffer)
     } catch {
         res.status(500).send({ status: false, message: 'Internal Server Error' })
