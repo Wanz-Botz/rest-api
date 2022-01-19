@@ -7,7 +7,7 @@ async function attp(req, res) {
         status: false,
         message: `masukan parameter 'text'`
     })
-    let message = await apikeyCheck(apikey, res)
+    let message = await cekKey(apikey, res)
     if (message) return res.status(200).send({
         status: false,
         message
