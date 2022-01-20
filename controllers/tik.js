@@ -13,10 +13,12 @@ async function tIk(req, res) {
         status: 403,
         message: `apikey ${apikey} not found, please register first!`
     });
-    tiktok(url).then(result => {
+    tiktok(url).then(data => {
         res.status(200).send({
             status: 200, 
-            result: result
+            nowm: data.nowm,
+            mp3: data.mp4,
+            original: data.original
         });
     }).catch(error => {
         console.log(error);
