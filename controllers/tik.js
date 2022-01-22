@@ -16,9 +16,10 @@ async function tIk(req, res) {
     tiktok(url).then(data => {
         res.status(200).send({
             status: 200, 
-            nowm: data.nowm,
-            mp3: data.mp4,
-            original: data.original
+            creator: Wanz-Botz,
+            nowm: data.nowatermark,
+            wm: data.watermark,
+            audio: data.audio
         });
     }).catch(error => {
         console.log(error);
