@@ -16,7 +16,6 @@ async function tIk(req, res) {
     tiktok(url).then(data => {
         res.status(200).send({
             status: 200, 
-            creator: Wanz-Botz,
             nowm: data.nowatermark,
             wm: data.watermark,
             audio: data.audio
