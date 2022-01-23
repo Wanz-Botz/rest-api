@@ -16,9 +16,7 @@ async function tIk(req, res) {
     tiktok(url).then(data => {
         res.status(200).send({
             status: 200, 
-            nowm: data.nowatermark,
-            wm: data.watermark,
-            audio: data.audio
+            result: result
         });
     }).catch(error => {
         console.log(error);
