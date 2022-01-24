@@ -16,7 +16,6 @@ async function tIk(req, res) {
     Tiktok(url)
     .then((data) => {
       res.send(data);
-        });
     }).catch(error => {
         console.log(error);
         res.status(500).send({
