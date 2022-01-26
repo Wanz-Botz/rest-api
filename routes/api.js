@@ -11,7 +11,6 @@ const { ttp } = require('../controllers/ttp');
 const { attp } = require('../controllers/ttp');
 const { mDo } = require('../controllers/media');
 const { tIk } = require('../controllers/tik');
-const { tIk2 } = require('../controllers/tik2');
 
 router.get('/checkkey', async (req, res) => {
     const apikey = req.query.apikey;
@@ -29,8 +28,6 @@ router.get('/checkkey', async (req, res) => {
 });
 
 router.get('/tiktok', tIk);
-
-router.get('/tiktok2', tIk2);
 
 router.get('/mediafire', mDo);
 
