@@ -1,6 +1,6 @@
 const { cekKey, limitAdd, isLimit } = require('../database/db');
 const fetch = require('node-fetch')
-const base64 = require('base64')
+const base64 = require('base-64')
 
 
 async function ttp(req, res) {
