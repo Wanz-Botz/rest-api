@@ -1,5 +1,6 @@
 const { cekKey, limitAdd, isLimit } = require('../database/db');
 const fetch = require('node-fetch')
+const base64 = require('base64')
 
 
 async function ttp(req, res) {
@@ -15,9 +16,11 @@ async function ttp(req, res) {
     })
     try {
         limitAdd(apikey)
-        buffer = await fetch(`https://hardianto.xyz/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=hardianto`).then(v => v.buffer())
-        res.type('image')
-        res.send(buffer)
+        data = await fetch(`https://hardianto.xyz/api/maker/ttp?text=${encodeURIComponent(text)}&apikey=hardianto`).then(v => v.json())
+         base64 = data.base64
+         var buffer = base64.slice(22)
+         await fs.writeFileSync(`ttp.png`, buffer, 'base64')
+        res.sendFile(__path+'/ttp.png')
     } catch {
         res.status(500).send({ status: false, message: 'Internal Server Error' })
     }
